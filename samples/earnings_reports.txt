@@ -1,0 +1,9 @@
+AAPL reported EPS of $2.18 for Q1 2024, beating consensus estimates of $2.10. Revenue grew 2% YoY to $119.6B. The Services segment contributed $23.1B, up 11% YoY. Gross margin expanded 310 basis points to 45.9%.
+
+MSFT Azure revenue grew 28% in Q2 FY2024, driven by AI services adoption. Total revenue reached $62.0B, up 18% YoY. Operating income increased 33% to $27.0B. EPS of $2.93 beat estimates by $0.19.
+
+NVDA data centre revenue of $18.4B in Q4 FY2024 exceeded expectations by $2.1B. H100 GPU demand remains constrained by supply. FY2024 total revenue of $60.9B represents 122% YoY growth. Net income margin expanded to 55.0%.
+
+JPM reported net income of $9.3B for Q4 2023, with ROE of 15%. Net interest income of $24.2B benefited from higher rates. Investment banking fees rose 13% to $1.6B. The bank set aside $2.8B in credit loss provisions.
+
+GS Q4 2023 revenue of $11.3B fell 12% YoY. FICC revenue declined 24% to $2.0B. Equities revenue of $2.1B was flat. The firm took a $1.3B write-down on consumer banking exit. ROE for the quarter was 7.9%.
