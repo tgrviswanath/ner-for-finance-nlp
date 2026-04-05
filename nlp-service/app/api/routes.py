@@ -1,3 +1,4 @@
+import asyncio
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from app.core.service import extract_entities
@@ -14,20 +15,26 @@ class BatchInput(BaseModel):
 
 
 @router.post("/extract")
-def extract(body: TextInput):
+async def extract(body: TextInput):
     if not body.text.strip():
         raise HTTPException(status_code=400, detail="text cannot be empty")
     try:
-        return extract_entities(body.text)
+        loop = asyncio.get_running_loop()
+        return await loop.run_in_executor(None, extract_entities, body.text)
+    except FileNotFoundError as e:
+        raise HTTPException(status_code=503, detail=str(e))
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
 
 @router.post("/extract/batch")
-def extract_batch(body: BatchInput):
+async def extract_batch(body: BatchInput):
     if not body.texts:
         raise HTTPException(status_code=400, detail="texts list cannot be empty")
     try:
-        return [extract_entities(t) for t in body.texts]
+        loop = asyncio.get_running_loop()
+        return await loop.run_in_executor(None, lambda: [extract_entities(t) for t in body.texts])
+    except FileNotFoundError as e:
+        raise HTTPException(status_code=503, detail=str(e))
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
